@@ -5,37 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PIZZA CREW</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Google Font per un titolo impattante -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #111;
+      background-color: #0d0d0d;
+      /* Sfondo scuro con texture fiamme sottile sul fondo */
+      background-image: 
+        radial-gradient(circle at 50% 100%, rgba(255, 68, 0, 0.15), transparent 70%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%231a0a00" fill-opacity="0.4" d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,218.7C672,213,768,171,864,165.3C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-attachment: fixed;
       color: #fff;
-      font-family: sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 16px;
       text-align: center;
     }
+
+    /* Titolo con animazione di caduta */
     h1 {
-      font-size: 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
       letter-spacing: 2px;
-      margin-bottom: 20px;
+      margin-top: 10px;
+      margin-bottom: 24px;
       text-transform: uppercase;
+      font-weight: 900;
+      animation: dropDown 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
-    /* Rettangolo Evento */
+
+    @keyframes dropDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-80px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Banner Evento */
     .banner-evento {
       width: 100%;
-      height: 180px;
-      background-color: #222;
-      border: 2px solid #333;
+      height: 200px;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
       border-radius: 12px;
       overflow: hidden;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .banner-evento img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    /* Griglia 2 Quadrati */
+
+    /* Descrizione Evento */
+    .evento-descrizione {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.4;
+      margin-bottom: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Griglia 2 Quadrati Merch */
     .grid-maglie {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -44,8 +86,8 @@
     }
     .square-item {
       aspect-ratio: 1 / 1;
-      background-color: #222;
-      border: 2px solid #333;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
       border-radius: 12px;
       overflow: hidden;
     }
@@ -54,6 +96,7 @@
       height: 100%;
       object-fit: cover;
     }
+
     /* Pulsante Instagram */
     .btn-instagram {
       display: block;
@@ -66,6 +109,7 @@
       border-radius: 8px;
       text-transform: uppercase;
       box-sizing: border-box;
+      letter-spacing: 1px;
     }
   </style>
 </head>
@@ -75,22 +119,35 @@
 
   <!-- Locandina Evento -->
   <div class="banner-evento">
-    <img src="INSERISCI_URL_LOCANDINA_QUI" alt="Prossimo Evento">
+    <img src="banner.jpg" alt="Prossimo Evento">
   </div>
 
-  <!-- Anteprima Magliette -->
+  <!-- Descrizione Evento -->
+  <div class="evento-descrizione">
+    <strong>NEXT EVENT // DJ SET & SCREEN PRINTING</strong><br>
+    Ingresso libero. Sound system attivo dalle 22:00.
+  </div>
+
+  <!-- Anteprima Merch -->
   <div class="grid-maglie">
     <div class="square-item">
-      <img src="INSERISCI_URL_MAGLIA_1_QUI" alt="Stampa 1">
+      <img src="maglia1.jpg" alt="Drop 1">
     </div>
     <div class="square-item">
-      <img src="INSERISCI_URL_MAGLIA_2_QUI" alt="Stampa 2">
+      <img src="maglia2.jpg" alt="Drop 2">
     </div>
   </div>
 
   <!-- Contatti -->
-  <p style="margin-bottom: 8px; color: #aaa;">CONTATTI</p>
-  <a href="https://instagram.com/TUO_PROFILO" class="btn-instagram" target="_blank">Instagram</a>
+  <p style="margin-bottom: 10px; color: #888; font-size: 12px; letter-spacing: 1px;">SOCIAL & UPDATES</p>
+  <a href="https://instagram.com/pizzacrew" class="btn-instagram" target="_blank">Instagram</a>
+
+  <script>
+    if (window.Telegram && window.Telegram.WebApp) {
+      window.Telegram.WebApp.ready();
+      window.Telegram.WebApp.expand();
+    }
+  </script>
 
 </body>
 </html>
