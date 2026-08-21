@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIZZA CREW</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 16px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    /* Rettangolo Evento */
+    .banner-evento {
+      width: 100%;
+      height: 180px;
+      background-color: #222;
+      border: 2px solid #333;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .banner-evento img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Griglia 2 Quadrati */
+    .grid-maglie {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .square-item {
+      aspect-ratio: 1 / 1;
+      background-color: #222;
+      border: 2px solid #333;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .square-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Pulsante Instagram */
+    .btn-instagram {
+      display: block;
+      width: 100%;
+      padding: 14px 0;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      text-transform: uppercase;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PIZZA CREW</h1>
+
+  <!-- Locandina Evento -->
+  <div class="banner-evento">
+    <img src="INSERISCI_URL_LOCANDINA_QUI" alt="Prossimo Evento">
+  </div>
+
+  <!-- Anteprima Magliette -->
+  <div class="grid-maglie">
+    <div class="square-item">
+      <img src="INSERISCI_URL_MAGLIA_1_QUI" alt="Stampa 1">
+    </div>
+    <div class="square-item">
+      <img src="INSERISCI_URL_MAGLIA_2_QUI" alt="Stampa 2">
+    </div>
+  </div>
+
+  <!-- Contatti -->
+  <p style="margin-bottom: 8px; color: #aaa;">CONTATTI</p>
+  <a href="https://instagram.com/TUO_PROFILO" class="btn-instagram" target="_blank">Instagram</a>
+
+</body>
+</html>
