@@ -27,7 +27,9 @@
       text-transform: uppercase; 
     }
 
-    .banner-evento { 
+    /* BANNER EVENTO CON OVERLAY */
+    .banner-container {
+      position: relative;
       width: 100%; 
       height: 200px; 
       background: #121212; 
@@ -36,13 +38,31 @@
       overflow: hidden; 
       margin-bottom: 12px; 
       cursor: pointer; 
-      transition: transform 0.3s ease, border-color 0.3s ease;
     }
-    .banner-evento img { 
+
+    .banner-container img { 
       width: 100%; 
       height: 100%; 
       object-fit: cover; 
-      transition: transform 0.4s ease;
+    }
+
+    .banner-overlay-title {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.75);
+      color: #ffcc00;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 204, 0, 0.4);
+      white-space: nowrap;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+      z-index: 2;
     }
 
     /* CARD EVENTO */
@@ -56,14 +76,6 @@
       border-radius: 12px;
       border: 1px solid #222;
       text-align: center;
-    }
-
-    .titolo-evento-giallo {
-      color: #ffcc00;
-      font-weight: 900;
-      font-size: 16px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
     }
 
     .info-line {
@@ -214,34 +226,64 @@
       border-top: 1px solid #222;
     }
 
-    /* PULSANTE VINTED */
+    /* SEZIONE PULSANTI ACTION SOCIAL/SHOP */
+    .social-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
     .vinted-bar {
-      background: #333;
+      background: #181818;
+      border: 1px solid #333;
       border-radius: 30px;
-      padding: 6px 16px;
+      padding: 10px 24px;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
       color: white;
       font-weight: bold;
       font-size: 13px;
       letter-spacing: 1px;
-      margin-top: 10px;
+      width: 80%;
+      max-width: 280px;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     .vinted-icon {
       background: #00a8a8;
       color: white;
       border-radius: 50%;
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: 16px;
+      font-size: 15px;
+    }
+
+    .btn-instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+      border-radius: 30px;
+      padding: 12px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 1px;
+      width: 80%;
+      max-width: 280px;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     /* POP-UP MODAL */
@@ -310,15 +352,14 @@
 
   <h1>PIZZA CREW</h1>
 
-  <!-- Banner Evento -->
-  <div class="banner-evento" onclick="openModal('https://i.ibb.co/MxnT01C0/banner-jpg.jpg', '')">
+  <!-- Banner Evento con Overlay Scritta -->
+  <div class="banner-container" onclick="openModal('https://i.ibb.co/MxnT01C0/banner-jpg.jpg', '')">
+    <div class="banner-overlay-title">⚠️ PROSSIMO EVENTO ⚠️</div>
     <img src="https://i.ibb.co/MxnT01C0/banner-jpg.jpg" alt="Locandina Evento">
   </div>
 
   <!-- Descrizione Evento -->
   <div class="evento-descrizione">
-    <div class="titolo-evento-giallo">⚠️ PROSSIMO EVENTO ⚠️</div>
-    
     <div class="info-line">🎨 <strong>Esposizione di quadri</strong> & live audio</div>
     <div class="info-line">🕔 Dalle 17:00 alle 23:00</div>
     <div class="info-line">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
@@ -332,23 +373,23 @@
       <span class="vedi-posizione-txt">VEDI POSIZIONE</span>
     </div>
 
-    <!-- Countdown -->
+    <!-- Countdown Dinamico -->
     <div class="countdown-grid">
       <div>
         <div class="countdown-header">GIORNI</div>
-        <div id="days" class="countdown-val">03</div>
+        <div id="days" class="countdown-val">00</div>
       </div>
       <div>
         <div class="countdown-header">ORE</div>
-        <div id="hours" class="countdown-val">12</div>
+        <div id="hours" class="countdown-val">00</div>
       </div>
       <div>
         <div class="countdown-header">MINUTI</div>
-        <div id="minutes" class="countdown-val">45</div>
+        <div id="minutes" class="countdown-val">00</div>
       </div>
       <div>
         <div class="countdown-header">SECONDI</div>
-        <div id="seconds" class="countdown-val">21</div>
+        <div id="seconds" class="countdown-val">00</div>
       </div>
     </div>
   </div>
@@ -384,11 +425,17 @@
 
   </div>
 
-  <!-- Pulsante Vinted -->
-  <a href="LINK_TUO_PROFILO_VINTED" target="_blank" class="vinted-bar">
-    <div class="vinted-icon">v</div>
-    <span>ACQUISTA SU VINTED</span>
-  </a>
+  <!-- Pulsanti Vinted & Instagram -->
+  <div class="social-group">
+    <a href="LINK_TUO_PROFILO_VINTED" target="_blank" class="vinted-bar">
+      <div class="vinted-icon">v</div>
+      <span>ACQUISTA SU VINTED</span>
+    </a>
+
+    <a href="https://www.instagram.com/pizza_cr.ew/" target="_blank" class="btn-instagram">
+      <span>INSTAGRAM</span>
+    </a>
+  </div>
 
   <!-- Pop-up Modal con selezione taglia/colore -->
   <div id="imageModal" class="modal">
@@ -417,6 +464,35 @@
     var myBotUsername = 'TUO_BOT_USERNAME'; // Inserisci il nome del bot senza @
     var currentItemTitle = '';
 
+    // SCRIPT COUNTDOWN DINAMICO (10 Ottobre 2026 alle 17:00)
+    var targetDate = new Date("October 10, 2026 17:00:00").getTime();
+
+    function updateCountdown() {
+      var now = new Date().getTime();
+      var difference = targetDate - now;
+
+      if (difference > 0) {
+        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+      } else {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // GESTIONE MODALE & ORDINE
     function openModal(imgSrc, title) {
       document.getElementById('modalImg').src = imgSrc;
       currentItemTitle = title;
