@@ -27,7 +27,6 @@
       text-transform: uppercase; 
     }
 
-    /* BANNER EVENTO CON ZOOM */
     .banner-evento { 
       width: 100%; 
       height: 200px; 
@@ -45,29 +44,92 @@
       object-fit: cover; 
       transition: transform 0.4s ease;
     }
-    .banner-evento:hover img,
-    .banner-evento:active img {
-      transform: scale(1.06);
-    }
-    .banner-evento:hover,
-    .banner-evento:active {
-      border-color: #ff4400;
-    }
 
-    /* DESCRIZIONE EVENTO */
+    /* CARD EVENTO */
     .evento-descrizione {
       font-size: 13px;
       color: #ccc;
       line-height: 1.5;
-      margin-bottom: 24px;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      text-align: left;
+      margin-bottom: 16px;
+      background: #121212;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      text-align: center;
     }
 
-    /* GRIGLIA MAGLIE CON ZOOM */
+    .titolo-evento-giallo {
+      color: #ffcc00;
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .info-line {
+      text-align: left;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    /* PULSANTE GOOGLE MAPS */
+    .btn-maps-container {
+      margin: 12px 0 16px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-maps {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e0e0e0;
+      color: #000;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .btn-maps img {
+      width: 14px;
+      height: 14px;
+    }
+
+    .vedi-posizione-txt {
+      font-size: 11px;
+      font-weight: bold;
+      color: #aaa;
+      letter-spacing: 0.5px;
+    }
+
+    /* COUNTDOWN */
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      margin-top: 10px;
+    }
+
+    .countdown-header {
+      font-size: 10px;
+      color: #888;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .countdown-val {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      color: #ffcc00;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    /* GRIGLIA PRODOTTI */
     .grid-maglie { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
@@ -81,7 +143,7 @@
       border-radius: 12px; 
       overflow: hidden;
       cursor: pointer;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
     }
     
     .square-item {
@@ -91,6 +153,7 @@
       background-color: #121212;
       overflow: hidden;
     }
+
     .square-item img {
       position: absolute;
       top: 0;
@@ -98,29 +161,90 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
     }
 
-    .card-item:hover,
-    .card-item:active {
-      transform: translateY(-4px);
-      border-color: #ff4400;
-      box-shadow: 0 6px 15px rgba(255, 68, 0, 0.2);
-    }
-    .card-item:hover .square-item img,
-    .card-item:active .square-item img {
-      transform: scale(1.08);
+    /* BADGE SALDI NEON ROSSO */
+    .badge-saldi {
+      position: absolute;
+      top: 10px;
+      left: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      z-index: 5;
+      text-shadow: 0 0 8px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+      transform: rotate(-10deg);
+      letter-spacing: 1px;
     }
 
-    .item-title { 
-      padding: 10px 4px; 
-      font-size: 11px; 
-      font-weight: bold; 
-      text-transform: uppercase; 
+    .price-overlay {
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+      z-index: 5;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #ffcc00;
+      font-size: 18px;
+      font-weight: 900;
+      margin-right: 6px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .new-price {
+      color: #ffcc00;
+      font-size: 22px;
+      font-weight: 900;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .item-title-bar {
+      background: #111;
+      padding: 8px 4px;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #aaa;
       letter-spacing: 0.5px;
+      border-top: 1px solid #222;
     }
 
-    /* POP-UP FINECATRA INGRANDITA */
+    /* PULSANTE VINTED */
+    .vinted-bar {
+      background: #333;
+      border-radius: 30px;
+      padding: 6px 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
+
+    .vinted-icon {
+      background: #00a8a8;
+      color: white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    /* POP-UP MODAL */
     .modal {
       display: none;
       position: fixed;
@@ -129,7 +253,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.92);
+      background-color: rgba(0, 0, 0, 0.94);
       justify-content: center;
       align-items: center;
       flex-direction: column;
@@ -139,10 +263,10 @@
     }
     .modal-img {
       max-width: 100%;
-      max-height: 80vh;
+      max-height: 45vh;
       border-radius: 8px;
       object-fit: contain;
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      margin-bottom: 12px;
     }
     .close-btn {
       position: absolute;
@@ -152,27 +276,33 @@
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.15);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      line-height: 38px;
-      text-align: center;
     }
 
-    /* PULSANTE INSTAGRAM */
-    .btn-instagram {
-      display: block;
+    .order-box {
       width: 100%;
-      padding: 14px 0;
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .select-style {
+      width: 100%;
+      padding: 12px;
+      background: #1f1f1f;
       color: white;
-      text-decoration: none;
-      font-weight: bold;
+      border: 1px solid #444;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .btn-order-tg {
+      background-color: #ff4400;
+      color: white;
+      padding: 14px;
+      border: none;
       border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
       text-transform: uppercase;
-      box-sizing: border-box;
-      letter-spacing: 1px;
     }
   </style>
 </head>
@@ -180,59 +310,139 @@
 
   <h1>PIZZA CREW</h1>
 
-  <!-- Banner Evento Cliccabile -->
-  <div class="banner-evento" onclick="openModal('https://i.ibb.co/MxnT01C0/banner-jpg.jpg')">
+  <!-- Banner Evento -->
+  <div class="banner-evento" onclick="openModal('https://i.ibb.co/MxnT01C0/banner-jpg.jpg', '')">
     <img src="https://i.ibb.co/MxnT01C0/banner-jpg.jpg" alt="Locandina Evento">
   </div>
 
   <!-- Descrizione Evento -->
   <div class="evento-descrizione">
-    <div style="color: #ff4400; font-weight: bold; margin-bottom: 6px; letter-spacing: 1px; text-align: center;">⚡️ NEXT EVENT // DJ SET & ART EXHIBITION ⚡️</div>
-    <div style="margin-bottom: 4px;">🎨 <strong>Esposizione di quadri</strong> & live audio</div>
-    <div style="margin-bottom: 4px;">🕔 Dalle 17:00 alle 23:00</div>
-    <div style="margin-bottom: 8px;">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
-    <div style="font-size: 11px; color: #888; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; margin-top: 6px; text-align: center;">
-      INGRESSO LIBERO // SOUND SYSTEM ATTIVO
+    <div class="titolo-evento-giallo">⚠️ PROSSIMO EVENTO ⚠️</div>
+    
+    <div class="info-line">🎨 <strong>Esposizione di quadri</strong> & live audio</div>
+    <div class="info-line">🕔 Dalle 17:00 alle 23:00</div>
+    <div class="info-line">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
+
+    <!-- Tasto Maps -->
+    <div class="btn-maps-container">
+      <a href="https://maps.google.com/?q=Via+Bernini+2,+Trieste" target="_blank" class="btn-maps">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Maps">
+        Google Maps
+      </a>
+      <span class="vedi-posizione-txt">VEDI POSIZIONE</span>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-grid">
+      <div>
+        <div class="countdown-header">GIORNI</div>
+        <div id="days" class="countdown-val">03</div>
+      </div>
+      <div>
+        <div class="countdown-header">ORE</div>
+        <div id="hours" class="countdown-val">12</div>
+      </div>
+      <div>
+        <div class="countdown-header">MINUTI</div>
+        <div id="minutes" class="countdown-val">45</div>
+      </div>
+      <div>
+        <div class="countdown-header">SECONDI</div>
+        <div id="seconds" class="countdown-val">21</div>
+      </div>
     </div>
   </div>
 
-  <!-- Griglia Merch Cliccabile -->
+  <!-- Griglia Magliette -->
   <div class="grid-maglie">
     
-    <div class="card-item" onclick="openModal('https://i.ibb.co/Zpx3CPcg/maglia1-jpg.jpg')">
+    <!-- Maglia 1 -->
+    <div class="card-item" onclick="openModal('https://i.ibb.co/Zpx3CPcg/maglia1-jpg.jpg', 'PIZZA CREW TEE')">
+      <div class="badge-saldi">SALDI</div>
       <div class="square-item">
         <img src="https://i.ibb.co/Zpx3CPcg/maglia1-jpg.jpg" alt="Maglia 1">
+        <div class="price-overlay">
+          <span class="old-price">€25</span>
+          <span class="new-price">€20</span>
+        </div>
       </div>
-      <div class="item-title">PIZZA CREW TEE</div>
+      <div class="item-title-bar">PIZZA CREW TEE</div>
     </div>
 
-    <div class="card-item" onclick="openModal('https://i.ibb.co/KZb4MHF/maglia2-jpg.jpg')">
+    <!-- Maglia 2 -->
+    <div class="card-item" onclick="openModal('https://i.ibb.co/KZb4MHF/maglia2-jpg.jpg', 'DROP #01 // SKATE & BURN')">
+      <div class="badge-saldi">SALDI</div>
       <div class="square-item">
         <img src="https://i.ibb.co/KZb4MHF/maglia2-jpg.jpg" alt="Maglia 2">
+        <div class="price-overlay">
+          <span class="old-price">€25</span>
+          <span class="new-price">€20</span>
+        </div>
       </div>
-      <div class="item-title">DROP #01 // SKATE & BURN</div>
+      <div class="item-title-bar">SKATE & BURN</div>
     </div>
 
   </div>
 
-  <!-- Contatti -->
-  <p style="margin-bottom: 10px; color: #888; font-size: 12px; letter-spacing: 1px;">SOCIAL & UPDATES</p>
-  <a href="https://instagram.com/pizzacrew" class="btn-instagram" target="_blank">Instagram</a>
+  <!-- Pulsante Vinted -->
+  <a href="LINK_TUO_PROFILO_VINTED" target="_blank" class="vinted-bar">
+    <div class="vinted-icon">v</div>
+    <span>ACQUISTA SU VINTED</span>
+  </a>
 
-  <!-- Pop-up Modal -->
-  <div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close-btn">&times;</span>
+  <!-- Pop-up Modal con selezione taglia/colore -->
+  <div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
     <img id="modalImg" class="modal-img">
+    
+    <div id="orderForm" class="order-box" style="display: none;">
+      <select id="selectTaglia" class="select-style">
+        <option value="S">Taglia: S</option>
+        <option value="M" selected>Taglia: M</option>
+        <option value="L">Taglia: L</option>
+        <option value="XL">Taglia: XL</option>
+      </select>
+
+      <select id="selectColore" class="select-style">
+        <option value="Nero">Colore: Nero</option>
+        <option value="Bianco">Colore: Bianco</option>
+        <option value="Grigio">Colore: Grigio</option>
+      </select>
+
+      <button onclick="sendOrderToTelegramBot()" class="btn-order-tg">Ordina su Telegram 🚀</button>
+    </div>
   </div>
 
   <script>
-    function openModal(imgSrc) {
+    var myBotUsername = 'TUO_BOT_USERNAME'; // Inserisci il nome del bot senza @
+    var currentItemTitle = '';
+
+    function openModal(imgSrc, title) {
       document.getElementById('modalImg').src = imgSrc;
+      currentItemTitle = title;
+      
+      var orderForm = document.getElementById('orderForm');
+      if (title !== '') {
+        orderForm.style.display = 'flex';
+      } else {
+        orderForm.style.display = 'none';
+      }
+      
       document.getElementById('imageModal').style.display = 'flex';
     }
 
     function closeModal() {
       document.getElementById('imageModal').style.display = 'none';
+    }
+
+    function sendOrderToTelegramBot() {
+      var taglia = document.getElementById('selectTaglia').value;
+      var colore = document.getElementById('selectColore').value;
+      
+      var testo = "Ciao! Vorrei ordinare: " + currentItemTitle + " \n- Taglia: " + taglia + "\n- Colore: " + colore;
+      var url = "https://t.me/" + myBotUsername + "?text=" + encodeURIComponent(testo);
+      
+      window.open(url, '_blank');
     }
 
     if (window.Telegram && window.Telegram.WebApp) {
