@@ -12,10 +12,9 @@
   <style>
     body {
       background-color: #0d0d0d;
-      /* Sfondo scuro con texture fiamme sottile sul fondo */
       background-image: 
         radial-gradient(circle at 50% 100%, rgba(255, 68, 0, 0.15), transparent 70%),
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%231a0a00" fill-opacity="0.4" d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,218.7C672,213,768,171,864,165.3C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%231a0a00" fill-opacity="0.4" d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,218.7C672,213,768,171,864,165.3C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
       background-repeat: no-repeat;
       background-position: bottom;
       background-attachment: fixed;
@@ -67,14 +66,15 @@
 
     /* Descrizione Evento */
     .evento-descrizione {
-      font-size: 14px;
+      font-size: 13px;
       color: #ccc;
-      line-height: 1.4;
+      line-height: 1.5;
       margin-bottom: 24px;
       background: rgba(255, 255, 255, 0.04);
       padding: 12px;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
     }
 
     /* Griglia 2 Quadrati Merch */
@@ -124,8 +124,13 @@
 
   <!-- Descrizione Evento -->
   <div class="evento-descrizione">
-    <strong>NEXT EVENT // DJ SET & SCREEN PRINTING</strong><br>
-    Ingresso libero. Sound system attivo dalle 22:00.
+    <div style="color: #ff4400; font-weight: bold; margin-bottom: 6px; letter-spacing: 1px; text-align: center;">⚡️ NEXT EVENT // DJ SET & ART EXHIBITION ⚡️</div>
+    <div style="margin-bottom: 4px;">🎨 <strong>Esposizione di quadri</strong> & live audio</div>
+    <div style="margin-bottom: 4px;">🕔 Dalle 17:00 alle 23:00</div>
+    <div style="margin-bottom: 8px;">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
+    <div style="font-size: 11px; color: #888; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; margin-top: 6px; text-align: center;">
+      INGRESSO LIBERO // SOUND SYSTEM ATTIVO
+    </div>
   </div>
 
   <!-- Anteprima Merch -->
