@@ -35,7 +35,7 @@
       border: 1px solid #333; 
       border-radius: 12px; 
       overflow: hidden; 
-      margin-bottom: 24px; 
+      margin-bottom: 12px; 
       cursor: pointer; 
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
@@ -45,7 +45,6 @@
       object-fit: cover; 
       transition: transform 0.4s ease;
     }
-    /* Effetto zoom su touch/hover banner */
     .banner-evento:hover img,
     .banner-evento:active img {
       transform: scale(1.06);
@@ -53,6 +52,19 @@
     .banner-evento:hover,
     .banner-evento:active {
       border-color: #ff4400;
+    }
+
+    /* DESCRIZIONE EVENTO */
+    .evento-descrizione {
+      font-size: 13px;
+      color: #ccc;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
     }
 
     /* GRIGLIA MAGLIE CON ZOOM */
@@ -89,7 +101,6 @@
       transition: transform 0.4s ease;
     }
 
-    /* Effetto zoom leggero sull'immagine e sollevamento card */
     .card-item:hover,
     .card-item:active {
       transform: translateY(-4px);
@@ -172,6 +183,17 @@
   <!-- Banner Evento Cliccabile -->
   <div class="banner-evento" onclick="openModal('https://i.ibb.co/MxnT01C0/banner-jpg.jpg')">
     <img src="https://i.ibb.co/MxnT01C0/banner-jpg.jpg" alt="Locandina Evento">
+  </div>
+
+  <!-- Descrizione Evento -->
+  <div class="evento-descrizione">
+    <div style="color: #ff4400; font-weight: bold; margin-bottom: 6px; letter-spacing: 1px; text-align: center;">⚡️ NEXT EVENT // DJ SET & ART EXHIBITION ⚡️</div>
+    <div style="margin-bottom: 4px;">🎨 <strong>Esposizione di quadri</strong> & live audio</div>
+    <div style="margin-bottom: 4px;">🕔 Dalle 17:00 alle 23:00</div>
+    <div style="margin-bottom: 8px;">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
+    <div style="font-size: 11px; color: #888; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; margin-top: 6px; text-align: center;">
+      INGRESSO LIBERO // SOUND SYSTEM ATTIVO
+    </div>
   </div>
 
   <!-- Griglia Merch Cliccabile -->
