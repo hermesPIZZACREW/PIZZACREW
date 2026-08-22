@@ -51,17 +51,22 @@
     /* Banner Evento */
     .banner-evento {
       width: 100%;
-      height: 200px;
+      max-height: 400px;
       background-color: #1a1a1a;
       border: 1px solid #333;
       border-radius: 12px;
       overflow: hidden;
       margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .banner-evento img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
     }
 
     /* Descrizione Evento */
@@ -96,11 +101,15 @@
       aspect-ratio: 1 / 1;
       width: 100%;
       background-color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .square-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
     }
     .item-title {
       color: #fff;
