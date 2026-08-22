@@ -72,29 +72,55 @@
       z-index: 2;
     }
 
-    /* CARD EVENTO */
+    /* CARD EVENTO NUOVA STRUTTURA */
     .evento-descrizione {
-      font-size: 13px;
-      color: #ccc;
-      line-height: 1.5;
+      font-size: 15px;
+      color: #eee;
+      line-height: 1.6;
       margin-bottom: 16px;
-      background: rgba(18, 18, 18, 0.9);
-      padding: 16px;
+      background: rgba(18, 18, 18, 0.92);
+      padding: 18px 14px;
       border-radius: 12px;
-      border: 1px solid #222;
+      border: 1px solid #333;
       text-align: center;
       backdrop-filter: blur(4px);
     }
 
-    .info-line {
-      text-align: left;
-      margin-bottom: 6px;
-      font-size: 13px;
+    .sezione-titolo {
+      font-weight: bold;
+      color: #fff;
+      margin-top: 8px;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .link-blu {
+      color: #3897f0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+
+    .link-blu:hover {
+      text-decoration: underline;
+      color: #60a5fa;
+    }
+
+    .info-orario {
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .info-via {
+      font-size: 14px;
+      margin-top: 4px;
     }
 
     /* PULSANTE GOOGLE MAPS */
     .btn-maps-container {
-      margin: 12px 0 16px 0;
+      margin: 14px 0 18px 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -110,7 +136,7 @@
       text-decoration: none;
       font-size: 11px;
       font-weight: bold;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 6px;
     }
 
@@ -368,11 +394,22 @@
     <img src="https://i.ibb.co/MxnT01C0/banner-jpg.jpg" alt="Locandina Evento">
   </div>
 
-  <!-- Descrizione Evento -->
+  <!-- Descrizione Evento Centrata con Link Instagram -->
   <div class="evento-descrizione">
-    <div class="info-line">🎨 <strong>Esposizione di quadri</strong> & live audio</div>
-    <div class="info-line">🕔 Dalle 17:00 alle 23:00</div>
-    <div class="info-line">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
+    <div class="sezione-titolo">🎧 DJ SET</div>
+    <div>
+      <a href="https://www.instagram.com/madyd__/" target="_blank" class="link-blu">MADYD</a> - 
+      <a href="https://www.instagram.com/triesteaffair_events/" target="_blank" class="link-blu">TRIESTE AFFAIR</a> - 
+      <a href="https://www.instagram.com/alessandro_coce/" target="_blank" class="link-blu">ALE_COCE</a>
+    </div>
+
+    <div class="sezione-titolo" style="margin-top: 14px;">🎨 ARTISTI</div>
+    <div>
+      <a href="https://www.instagram.com/mayero.art.streetwear/" target="_blank" class="link-blu">MAYERO</a>
+    </div>
+
+    <div class="info-orario">🕔 Dalle 17:00 alle 23:00</div>
+    <div class="info-via">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
 
     <!-- Tasto Maps -->
     <div class="btn-maps-container">
