@@ -195,7 +195,7 @@
       display: grid; 
       grid-template-columns: 1fr 1fr; 
       gap: 12px; 
-      margin-bottom: 24px; 
+      margin-bottom: 16px; 
     }
     
     .card-item { 
@@ -254,6 +254,43 @@
       border-top: 1px solid #222;
     }
 
+    /* BOX INFO ORDINI / FASE ORGANIZZATIVA */
+    .info-ordine-box {
+      background: rgba(18, 18, 18, 0.92);
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .info-ordine-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      color: #ffcc00;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .info-ordine-text {
+      font-size: 13px;
+      color: #ddd;
+      line-height: 1.5;
+    }
+
+    .info-ordine-text a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .info-ordine-text a:hover {
+      text-decoration: underline;
+    }
+
     /* SEZIONE PULSANTE SOCIAL */
     .social-group {
       display: flex;
@@ -306,6 +343,7 @@
       margin-bottom: 12px;
     }
     .close-btn {
+      position: direct;
       position: absolute;
       top: 20px;
       right: 20px;
@@ -411,6 +449,14 @@
         <div class="item-title-bar">TRST CREW LIMITED EDITION</div>
       </div>
 
+    </div>
+
+    <!-- Box Info Fase Organizzativa Ordini -->
+    <div class="info-ordine-box">
+      <div class="info-ordine-title">🛍️ COME ORDINARE</div>
+      <div class="info-ordine-text">
+        Siamo attualmente in <strong>fase organizzativa</strong>. Per info, taglie e prenotazioni scrivici direttamente in DM su <a href="https://www.instagram.com/pizza_cr.ew/" target="_blank">Instagram</a>!
+      </div>
     </div>
 
     <!-- Pulsante Instagram -->
