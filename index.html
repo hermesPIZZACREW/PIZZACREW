@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -33,7 +33,7 @@
       text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
-    /* BANNER EVENTO CON OVERLAY (questo resta cliccabile per aprire la locandina) */
+    /* BANNER EVENTO CON OVERLAY */
     .banner-container {
       position: relative;
       width: 100%; 
@@ -175,7 +175,7 @@
       line-height: 1;
     }
 
-    /* GRIGLIA PRODOTTI (Senza interazione click) */
+    /* GRIGLIA PRODOTTI */
     .grid-maglie { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
@@ -208,7 +208,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.35); /* Regola questo valore se vuoi più o meno zoom (es. 1.2 o 1.5) */
+      transform: scale(1.35);
       transform-origin: center center;
     }
 
@@ -266,7 +266,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    /* POP-UP MODAL (Utilizzato solo per il Banner Evento) */
+    /* POP-UP MODAL PER IL BANNER */
     .modal {
       display: none;
       position: fixed;
@@ -305,7 +305,7 @@
 
   <h1>PIZZA CREW</h1>
 
-  <!-- Banner Evento con Overlay Scritta (Unico elemento che apre la modale) -->
+  <!-- Banner Evento con Overlay Scritta -->
   <div class="banner-container" onclick="openModal('https://i.ibb.co/MxnT01C0/banner-jpg.jpg')">
     <div class="banner-overlay-title">⚠️ PROSSIMO EVENTO ⚠️</div>
     <img src="https://i.ibb.co/MxnT01C0/banner-jpg.jpg" alt="Locandina Evento">
@@ -358,7 +358,7 @@
     </div>
   </div>
 
-  <!-- Griglia Magliette (Senza link o click) -->
+  <!-- Griglia Magliette (3 Articoli) -->
   <div class="grid-maglie">
     
     <!-- Maglia 1 -->
@@ -383,6 +383,17 @@
       <div class="item-title-bar">SKATE & BURN</div>
     </div>
 
+    <!-- Maglia 3 (Trst Crew Limited Edition) -->
+    <div class="card-item">
+      <div class="square-item">
+        <img src="https://i.ibb.co/BH1npJtn/photo-2026-09-08-09-14-14.jpg" alt="Maglia 3">
+        <div class="price-overlay">
+          <span class="new-price">€25</span>
+        </div>
+      </div>
+      <div class="item-title-bar">TRST CREW LIMITED EDITION</div>
+    </div>
+
   </div>
 
   <!-- Pulsante Instagram -->
@@ -392,7 +403,7 @@
     </a>
   </div>
 
-  <!-- Pop-up Modal per ingrandire la locandina dell'evento -->
+  <!-- Pop-up Modal per il Banner -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="close-btn">&times;</span>
     <img id="modalImg" class="modal-img">
@@ -427,7 +438,6 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // GESTIONE MODALE SOLO PER IL BANNER EVENTO
     function openModal(imgSrc) {
       document.getElementById('modalImg').src = imgSrc;
       document.getElementById('imageModal').style.display = 'flex';
