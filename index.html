@@ -19,8 +19,23 @@
       color: #fff; 
       font-family: sans-serif; 
       margin: 0; 
-      padding: 16px; 
-      text-align: center; 
+      padding: 0; 
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    /* CONTENITORE CENTRALE (Simula lo schermo dello smartphone anche su PC) */
+    .app-container {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 16px;
+      box-sizing: border-box;
+      background-color: rgba(13, 13, 13, 0.7);
+      min-height: 100vh;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     }
     
     h1 { 
@@ -303,104 +318,108 @@
 </head>
 <body>
 
-  <h1>PIZZA CREW</h1>
+  <div class="app-container">
 
-  <!-- Banner Evento con Overlay Scritta -->
-  <div class="banner-container" onclick="openModal('https://i.ibb.co/GQ5vyYTd/photo-2026-09-08-09-35-16.jpg')">
-    <div class="banner-overlay-title">⚠️ PROSSIMO EVENTO ⚠️</div>
-    <img src="https://i.ibb.co/GQ5vyYTd/photo-2026-09-08-09-35-16.jpg" alt="Locandina Evento">
-  </div>
+    <h1>PIZZA CREW</h1>
 
-  <!-- Descrizione Evento Centrata con Link Instagram -->
-  <div class="evento-descrizione">
-    <div class="sezione-titolo">🎧 DJ SET</div>
-    <div>
-      <a href="https://www.instagram.com/marziadrs?stkn=YmxpZW04bGRpdXA5" target="_blank" class="link-blu">MADYD</a> - 
-      <a href="https://www.instagram.com/alessandro_coce/" target="_blank" class="link-blu">ALE_COCE</a>
+    <!-- Banner Evento con Overlay Scritta -->
+    <div class="banner-container" onclick="openModal('https://i.ibb.co/GQ5vyYTd/photo-2026-09-08-09-35-16.jpg')">
+      <div class="banner-overlay-title">⚠️ PROSSIMO EVENTO ⚠️</div>
+      <img src="https://i.ibb.co/GQ5vyYTd/photo-2026-09-08-09-35-16.jpg" alt="Locandina Evento">
     </div>
 
-    <div class="sezione-titolo" style="margin-top: 14px;">🎨 ARTISTI</div>
-    <div>
-      <a href="https://www.instagram.com/mayero.art.streetwear/" target="_blank" class="link-blu">MAYERO</a> - 
-      <a href="https://www.instagram.com/liuzzi_nik?stkn=MzRmMndvMGx5dm4y" target="_blank" class="link-blu">NIK_LIUZZI</a>
+    <!-- Descrizione Evento Centrata con Link Instagram -->
+    <div class="evento-descrizione">
+      <div class="sezione-titolo">🎧 DJ SET</div>
+      <div>
+        <a href="https://www.instagram.com/marziadrs?stkn=YmxpZW04bGRpdXA5" target="_blank" class="link-blu">MADYD</a> - 
+        <a href="https://www.instagram.com/alessandro_coce/" target="_blank" class="link-blu">ALE_COCE</a>
+      </div>
+
+      <div class="sezione-titolo" style="margin-top: 14px;">🎨 ARTISTI</div>
+      <div>
+        <a href="https://www.instagram.com/mayero.art.streetwear/" target="_blank" class="link-blu">MAYERO</a> - 
+        <a href="https://www.instagram.com/liuzzi_nik?stkn=MzRmMndvMGx5dm4y" target="_blank" class="link-blu">NIK_LIUZZI</a>
+      </div>
+
+      <div class="info-orario">🕔 Dalle 17:00 alle 23:00</div>
+      <div class="info-via">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
+
+      <!-- Tasto Maps -->
+      <div class="btn-maps-container">
+        <a href="https://maps.google.com/?q=Via+Bernini+2,+Trieste" target="_blank" class="btn-maps">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Maps">
+          Google Maps
+        </a>
+        <span class="vedi-posizione-txt">VEDI POSIZIONE</span>
+      </div>
+
+      <!-- Countdown Dinamico -->
+      <div class="countdown-grid">
+        <div>
+          <div class="countdown-header">GIORNI</div>
+          <div id="days" class="countdown-val">00</div>
+        </div>
+        <div>
+          <div class="countdown-header">ORE</div>
+          <div id="hours" class="countdown-val">00</div>
+        </div>
+        <div>
+          <div class="countdown-header">MINUTI</div>
+          <div id="minutes" class="countdown-val">00</div>
+        </div>
+        <div>
+          <div class="countdown-header">SECONDI</div>
+          <div id="seconds" class="countdown-val">00</div>
+        </div>
+      </div>
     </div>
 
-    <div class="info-orario">🕔 Dalle 17:00 alle 23:00</div>
-    <div class="info-via">📍 <strong>Officine Artistiche</strong> — Via Bernini 2, Trieste</div>
+    <!-- Griglia Magliette (3 Articoli) -->
+    <div class="grid-maglie">
+      
+      <!-- Maglia 1 -->
+      <div class="card-item">
+        <div class="square-item">
+          <img src="https://i.ibb.co/Zpx3CPcg/maglia1-jpg.jpg" alt="Maglia 1">
+          <div class="price-overlay">
+            <span class="new-price">€25</span>
+          </div>
+        </div>
+        <div class="item-title-bar">PIZZA CREW TEE</div>
+      </div>
 
-    <!-- Tasto Maps -->
-    <div class="btn-maps-container">
-      <a href="https://maps.google.com/?q=Via+Bernini+2,+Trieste" target="_blank" class="btn-maps">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Maps">
-        Google Maps
+      <!-- Maglia 2 -->
+      <div class="card-item">
+        <div class="square-item">
+          <img src="https://i.ibb.co/KZb4MHF/maglia2-jpg.jpg" alt="Maglia 2">
+          <div class="price-overlay">
+            <span class="new-price">€25</span>
+          </div>
+        </div>
+        <div class="item-title-bar">SKATE & BURN</div>
+      </div>
+
+      <!-- Maglia 3 (Trst Crew Limited Edition - Prezzo €20) -->
+      <div class="card-item">
+        <div class="square-item">
+          <img src="https://i.ibb.co/BH1npJtn/photo-2026-09-08-09-14-14.jpg" alt="Maglia 3">
+          <div class="price-overlay">
+            <span class="new-price">€20</span>
+          </div>
+        </div>
+        <div class="item-title-bar">TRST CREW LIMITED EDITION</div>
+      </div>
+
+    </div>
+
+    <!-- Pulsante Instagram -->
+    <div class="social-group">
+      <a href="https://www.instagram.com/pizza_cr.ew/" target="_blank" class="btn-instagram">
+        <span>INSTAGRAM</span>
       </a>
-      <span class="vedi-posizione-txt">VEDI POSIZIONE</span>
     </div>
 
-    <!-- Countdown Dinamico -->
-    <div class="countdown-grid">
-      <div>
-        <div class="countdown-header">GIORNI</div>
-        <div id="days" class="countdown-val">00</div>
-      </div>
-      <div>
-        <div class="countdown-header">ORE</div>
-        <div id="hours" class="countdown-val">00</div>
-      </div>
-      <div>
-        <div class="countdown-header">MINUTI</div>
-        <div id="minutes" class="countdown-val">00</div>
-      </div>
-      <div>
-        <div class="countdown-header">SECONDI</div>
-        <div id="seconds" class="countdown-val">00</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Griglia Magliette (3 Articoli) -->
-  <div class="grid-maglie">
-    
-    <!-- Maglia 1 -->
-    <div class="card-item">
-      <div class="square-item">
-        <img src="https://i.ibb.co/Zpx3CPcg/maglia1-jpg.jpg" alt="Maglia 1">
-        <div class="price-overlay">
-          <span class="new-price">€25</span>
-        </div>
-      </div>
-      <div class="item-title-bar">PIZZA CREW TEE</div>
-    </div>
-
-    <!-- Maglia 2 -->
-    <div class="card-item">
-      <div class="square-item">
-        <img src="https://i.ibb.co/KZb4MHF/maglia2-jpg.jpg" alt="Maglia 2">
-        <div class="price-overlay">
-          <span class="new-price">€25</span>
-        </div>
-      </div>
-      <div class="item-title-bar">SKATE & BURN</div>
-    </div>
-
-    <!-- Maglia 3 (Trst Crew Limited Edition - Prezzo €20) -->
-    <div class="card-item">
-      <div class="square-item">
-        <img src="https://i.ibb.co/BH1npJtn/photo-2026-09-08-09-14-14.jpg" alt="Maglia 3">
-        <div class="price-overlay">
-          <span class="new-price">€20</span>
-        </div>
-      </div>
-      <div class="item-title-bar">TRST CREW LIMITED EDITION</div>
-    </div>
-
-  </div>
-
-  <!-- Pulsante Instagram -->
-  <div class="social-group">
-    <a href="https://www.instagram.com/pizza_cr.ew/" target="_blank" class="btn-instagram">
-      <span>INSTAGRAM</span>
-    </a>
   </div>
 
   <!-- Pop-up Modal per il Banner -->
