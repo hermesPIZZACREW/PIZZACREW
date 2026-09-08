@@ -210,37 +210,12 @@
       object-fit: cover;
     }
 
-    /* BADGE SALDI NEON ROSSO */
-    .badge-saldi {
-      position: absolute;
-      top: 10px;
-      left: 6px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      font-weight: 900;
-      color: #fff;
-      text-transform: uppercase;
-      z-index: 5;
-      text-shadow: 0 0 8px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
-      transform: rotate(-10deg);
-      letter-spacing: 1px;
-    }
-
     .price-overlay {
       position: absolute;
       bottom: 8px;
       width: 100%;
       text-align: center;
       z-index: 5;
-    }
-
-    .old-price {
-      text-decoration: line-through;
-      color: #ffcc00;
-      font-size: 18px;
-      font-weight: 900;
-      margin-right: 6px;
-      font-family: 'Montserrat', sans-serif;
     }
 
     .new-price {
@@ -261,47 +236,13 @@
       border-top: 1px solid #222;
     }
 
-    /* SEZIONE PULSANTI ACTION SOCIAL/SHOP */
+    /* SEZIONE PULSANTI SOCIAL */
     .social-group {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 12px;
       margin-top: 10px;
-    }
-
-    .vinted-bar {
-      background: rgba(24, 24, 24, 0.9);
-      border: 1px solid #333;
-      border-radius: 30px;
-      padding: 10px 24px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 13px;
-      letter-spacing: 1px;
-      width: 80%;
-      max-width: 280px;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-    }
-
-    .vinted-icon {
-      background: #00a8a8;
-      color: white;
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 15px;
     }
 
     .btn-instagram {
@@ -446,12 +387,10 @@
     
     <!-- Maglia 1 -->
     <div class="card-item" onclick="openModal('https://i.ibb.co/Zpx3CPcg/maglia1-jpg.jpg', 'PIZZA CREW TEE')">
-      <div class="badge-saldi">SALDI</div>
       <div class="square-item">
         <img src="https://i.ibb.co/Zpx3CPcg/maglia1-jpg.jpg" alt="Maglia 1">
         <div class="price-overlay">
-          <span class="old-price">€25</span>
-          <span class="new-price">€20</span>
+          <span class="new-price">€25</span>
         </div>
       </div>
       <div class="item-title-bar">PIZZA CREW TEE</div>
@@ -459,12 +398,10 @@
 
     <!-- Maglia 2 -->
     <div class="card-item" onclick="openModal('https://i.ibb.co/KZb4MHF/maglia2-jpg.jpg', 'DROP #01 // SKATE & BURN')">
-      <div class="badge-saldi">SALDI</div>
       <div class="square-item">
         <img src="https://i.ibb.co/KZb4MHF/maglia2-jpg.jpg" alt="Maglia 2">
         <div class="price-overlay">
-          <span class="old-price">€25</span>
-          <span class="new-price">€20</span>
+          <span class="new-price">€25</span>
         </div>
       </div>
       <div class="item-title-bar">SKATE & BURN</div>
@@ -472,13 +409,8 @@
 
   </div>
 
-  <!-- Pulsanti Vinted & Instagram -->
+  <!-- Pulsante Instagram -->
   <div class="social-group">
-    <a href="LINK_TUO_PROFILO_VINTED" target="_blank" class="vinted-bar">
-      <div class="vinted-icon">v</div>
-      <span>ACQUISTA SU VINTED</span>
-    </a>
-
     <a href="https://www.instagram.com/pizza_cr.ew/" target="_blank" class="btn-instagram">
       <span>INSTAGRAM</span>
     </a>
@@ -508,7 +440,7 @@
   </div>
 
   <script>
-    var myBotUsername = 'TUO_BOT_USERNAME'; // Inserisci il nome del bot senza @
+    var myBotUsername = 'TUO_BOT_USERNAME'; // Ricordati di inserire il nome del tuo bot senza @
     var currentItemTitle = '';
 
     // SCRIPT COUNTDOWN DINAMICO (10 Ottobre 2026 alle 17:00)
